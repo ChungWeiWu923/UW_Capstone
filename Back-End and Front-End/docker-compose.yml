@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:8.0
+    platform: linux/amd64  
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: '0000'  
+      MYSQL_DATABASE: kol
+      MYSQL_CHARSET: utf8mb4  
+      MYSQL_COLLATION: utf8mb4_unicode_ci  
+    ports:
+      - "3306:3306" 
+
+  web:
+    build: .
+    command: ["./wait-for-it.sh", "db", "3306", "30", "2", "--", "sh", "-c", "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
+    volumes:
+      - .:/app
+      - ./post-migration.sql:/docker-entrypoint-initdb.d/post-migration.sql
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_HOST: db  
+      DATABASE_NAME: kol
+      DATABASE_USER: root
+      DATABASE_PASSWORD: '0000'  
+
+volumes:
+  mysql_data:

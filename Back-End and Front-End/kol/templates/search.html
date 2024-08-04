@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for KOLs</title>
+    <link rel="stylesheet" href="../../static/css/styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header">
+            <img src="../../static/image/logo.png" alt="This is my logo" class="logo">
+            <div class="title-and-buttons">
+                <h1>Finding your KOLs</h1>
+                <div class="areas">
+                    <button id="oncology-btn">Oncology</button>
+                    <button id="immunology-btn">Immunology</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="place-holder"></div>
+    <div class="container">
+        <form method="get">
+            <div class="sidebar">
+                <fieldset id="immunology-fieldset" class="filter-area" style="display: none;">
+                    <legend>Subarea of Immunology</legend>
+                    <label><input type="radio" name="immunology-area" value="All"> All</label>
+                    <label><input type="radio" name="immunology-area" value="Chronic Urticaria"> Chronic Urticaria</label>
+                    <label><input type="radio" name="immunology-area" value="Lupus Erythematosus"> Lupus Erythematosus</label>
+                    <label><input type="radio" name="immunology-area" value="Rheumatoid Arthritis"> Rheumatoid Arthritis</label>
+                </fieldset>
+                
+                <fieldset id="oncology-fieldset" class="filter-area" style="display: none;">
+                    <legend>Subarea of Oncology</legend>
+                    <label><input type="radio" name="oncology-area" value="All"> All</label>
+                    <label><input type="radio" name="oncology-area" value="DLBCL"> DLBCL</label>
+                    <label><input type="radio" name="oncology-area" value="Pancreatic Adenocarcinoma"> Pancreatic Adenocarcinoma</label>
+                    <label><input type="radio" name="oncology-area" value="Uterine Cervical Cancer"> Uterine Cervical Cancer</label>
+                </fieldset>
+                
+                <label for="yoe">Years of working experience:</label>
+                <select name="yoe" id="years of working experience">
+                    <option value="">Select experience range</option>
+                    <option value="1 Year">1 Year</option>
+                    <option value="5 Years">5 Years</option>
+                    <option value="10 Years">10 Years</option>
+                    <option value="More than 10 Years">More than 10 Years</option>
+                </select>
+
+                <label for="numbers-of-publication">Number of Publications:</label>
+                <select name="pub_count" id="numbers-of-publication">
+                    <option value="">Select publication range</option>
+                    <option value="Less Than 2">Less Than 2</option>
+                    <option value="2 ~ 5">2 ~ 5</option>
+                    <option value="5 ~ 10">5 ~ 10</option>
+                    <option value="More than 10">More than 10</option>
+                </select>
+
+                <label for="numbers-of-coauthorship">Number of Clinic Trials:</label>
+                <select name="coauthorship_count" id="numbers-of-coauthorship">
+                    <option value="">Select Co-authorship range</option>
+                    <option value="Less Than 20">Less Than 20</option>
+                    <option value="20 ~ 40">20 ~ 40</option>
+                    <option value="40 ~ 60">40 ~ 60</option>
+                    <option value="More than 60">More than 60</option>
+                </select>
+
+                <button class="search" type="submit">Search for KOLs</button>
+            </div>
+        </form>
+
+        <div class="place-holder">
+            <h1>Welcome to Our KOL Finder Tool</h1>
+            <p>Discover influential leaders in the fields of Oncology and Immunology using our advanced AI-driven search tool. Our system employs state-of-the-art Graph Neural Networks (GNNs) to analyze complex datasets and identify individuals who are leading voices in their respective fields.</p >
+            
+            <div class="section">
+                <h2 class="question">How our website works?</h2>
+                <div class="answer">
+                    <ul>
+                        <li><strong>Data-Driven Insights:</strong> Utilize comprehensive data extracted from numerous publications and clinical trial participations to ensure the accuracy and relevance of your search results.</li>
+                        <li><strong>Customizable Search:</strong> Filter KOLs based on specific criteria such as years of experience, number of publications, and clinical trial contributions. Each filter fine-tunes the search to match your exact needs.</li>
+                        <li><strong>Graph Neural Network Analysis:</strong> Our backend leverages sophisticated models to evaluate the centrality and impact of potential KOLs within their networks, ensuring that you find not just any experts, but the right ones for your purposes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="question">Where does the data come from?</h2>
+                <div class="answer">
+                    <p>Our data source is PubMed, a free resource matained by the U.S National Library of Medicine(NLM).</p >
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="question">What is the limitation of your data scource?</h2>
+                <div class="answer">
+                    <p>Since the enture dataset is sourced from PubMed database, the attribute value for affilitated institutions is limited by the database. We have to admit, for particular expert, there might have multiple affiliated institutions that shown in PubMed, so we cannot associted with.</p >
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="question">How is the KOLs score calculated?</h2>
+                <div class="answer">
+                    <p>The identification of Key Opinion Leaders(KOLs) is based on graph theory, so we use centrality measures to access the influence of a node in the graph. The centrality measures included Degree Cenrrality(DC), Closeness Centrality(CC), Betweenness Centrality(BC), and we also add Years of experience(YOE).The final score is calculated by weighting those four indicators at a ratid of 1:1:1:0.2.</p >
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="question">What does DC means?</h2>
+                <div class="answer">
+                    <p>DC stands for Degree Centrality, it is defined as the number of edges conneectd to a node. </p >
+                    <p>Specifically for a node v, its degree centrality CD(v) can be expressed as: CD(v)=deg(v), where dug(v) is the degree of node v.</p >
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="question">What does CC means?</h2>
+                <div class="answer">
+                    <p>CC stands for Closeness Centrality, is a method based on the average shortest path length from a influential in the nectwork bacause they can reach other nodes more quickly.</p >
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="question">What does BC means?</h2>
+                <div class="answer">
+                    <p>BC stands for Betweenness Centrality, it is a method based on the average shortest path length from a node to all other nodes. Nodes with high betweenness centrality are usually considered critical in the network because they act as bridges on many shortest paths.</p >
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="question">How to calculated the YOE?</h2>
+                <div class="answer">
+                    <p>YOE:Years of Experience is calculated as follows: YOE = Current Year(2024) - The year of the earliest published paper by the KOL</p >
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="question">How those four indicators weighted?</h2>
+                <div class="answer">
+                    <p>As shown in the below diagram, the score is determined by four indicators. Although these indicators may not be absolutely monotonic over small intervals, they are generally monotonic overall from the start point to the end.</p >
+                    <img src="../../static/image/modelGraph.jpg" alt="GNN model graph">
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="question">What is the accuracy analysis?</h2>
+                <div class="answer">
+                    <p>We use the website <a href=" " target="_blank">https://findexpertmd.com/</a > as a baseline to test the reliability of the KOLs ranked by our method. for the different subfields, the accuracy usually ranges from 25% to 73%. </p >
+                    <p>For the Subarea of low accuracy rate, we think that is due to the small size of the dataset and the limited number of the features in the data. With a robust dataset, we believe our method's accuracy would be higher.</p >
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="question">Accuracy rate for Oncology</h2>
+                <div class="answer">
+                    <ul>
+                        <li>DLBCL: 25%</li>
+                        <li>Pancreatic Adenocarcinoma: 25%</li>
+                        <li>Uterine Cervical Cancer: 10%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="question">Accuracy rate for Immunology</h2>
+                <div class="answer">
+                    <ul>
+                        <li>Chronic Urticaria: 73.3% (11/15)</li>
+                        <li>Rheumatoid Arthritis: 25% (5/20)</li>
+                        <li>Lupus Erythematosus: 40% (8/20)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="question">How to get start for our website?</h2>
+                <div class="answer">
+                    <ul>
+                        <li>Choose your area of interest (Oncology or Immunology) to begin tailoring your search.</li>
+                        <li>Utilize the filters to define the parameters of your search.</li>
+                        <li>Hit 'Search for KOLs' to see a list of potential key opinion leaders who match your criteria.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="question">Paper Reference</h2>
+                <div class="answer">
+                    <p>M.R. Gotecha and M.S. Patwardhan, "Indentification of Key Opinion Leaders in Healthcare Domain Using Weighted Social Network Analysis," 2016 International Conference on Computing Communication Control and Automation(ICCUBEA), Pune, India, 2016, pp.1-6, doi: 10.1109.ICCUBEA.2016.7860000. "Graph Neural Networks for Fast Node Ranking Approximation", ACM Transctions on Knowledge Discovery from DataBolume 15Issue 5Article No.:78pp</p >
+                    <p>M.R. Gotecha and M.S. Patwardhan, "Indentification of Key Opinion Leaders in Healthcare Domain Using Weighted Social Network Analysis," 2016 International Conference on Computing Communication Control and Automation(ICCUBEA), Pune, India, 2016, pp.1-6, doi: 10.1109.ICCUBEA.2016.7860000. "Graph Neural Networks for Fast Node Ranking Approximation", ACM Transctions on Knowledge Discovery from DataBolume 15Issue 5Article No.:78pp</p >
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="main-content">
+            {% for item in results %}
+                <div class="provider-card">
+                    <div class="provider-info">
+                        <h2><a href="http://127.0.0.1:8000/info/?name={{item.name}}" target="_blank">{{ item.name }}</a></h2>
+                        <p>Affiliation : {{ item.affiliation }}</p >
+                        <p>KOL Score : {{ item.score }}</p >
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 University of Washington & Genmab. All rights reserved.</p >
+        </div>
+    </footer>
+
+    <script src="../../static/js/scripts.js"></script>
+</body>
+</html>

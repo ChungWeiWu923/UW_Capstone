@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../static/css/styles.css">
+    <title>Personal Information</title>
+</head>
+<body>
+    <h1>Person Information</h1>
+    
+    <div class="info">
+        <p><strong>Name:</strong> {{ person.name }}</p>
+        <p><strong>Field:</strong> {{ person.field }}</p>
+        <p><strong>Affiliation:</strong> {{ person.affiliation }}</p>
+        <p><strong>Score:</strong> {{ person.score }}</p>
+        <p><strong>Number of Publications:</strong> {{ person.pub_count }}</p>
+        <p><strong>Number of Coauthorships:</strong> {{ person.coauthorship_count }}</p>
+        <p><strong>Years of Experience:</strong> {{ person.yoe }}</p>
+        <h2>Publications List</h2>
+        <ul>
+            {% for publication in person.pub_list %}
+                <li>{{ publication }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+CREATE TABLE kol_info (
+    name VARCHAR(255),
+    field VARCHAR(255),
+    affiliation VARCHAR(10000),
+    score DECIMAL(10,2),
+    pub_count INT,
+    coauthorship_count INT,
+    yoe DECIMAL(5,2)
+);
+
+CREATE TABLE kol_pub_list (
+    name VARCHAR(255),
+    article_title VARCHAR(1000)
+);

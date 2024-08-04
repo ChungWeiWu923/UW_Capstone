@@ -1,0 +1,259 @@
+body, html {
+    margin: 0;
+    padding: 0 0 50px 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    position: relative;
+}
+
+.header {
+    background-color: #f9f9f9; 
+    padding: 10px 20px;
+    text-align: center; 
+    border-bottom: 1px solid #eaeaea; 
+    position: fixed;
+    height: auto;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container {
+    flex: 1; /* Allocate space but allow shrink/grow as needed */
+    display: flex;
+    align-items: center; /* Vertically center the logo */
+}
+
+.logo {
+    width: 180px; 
+    height: auto; 
+    margin-right: 200px;
+}
+
+.header h1 {
+    color: #39275B; 
+    margin-bottom: 20px;
+}
+
+.areas button {
+    background-color: #39275B; 
+    color: #ffffff; /* White text color */
+    border: none; 
+    border-radius: 4px; /* Rounded corners for the buttons */
+    padding: 10px 20px; /* Padding inside the buttons for spacing */
+    margin: 0 10px; /* Margin between buttons */
+    font-size: 16px; /* Font size for the button text */
+    cursor: pointer; /* Cursor to indicate the buttons are clickable */
+    transition: background-color 0.3s ease; /* Transition for a hover effect */
+}
+
+.areas button:hover {
+    background-color: #39275bb9; 
+}
+
+/* end for header */
+.place-holder {
+    height: 150px;
+}
+
+.container {
+    display: flex; 
+    flex-direction: row; 
+    width: 100%; 
+    padding-bottom: 60px;
+}
+
+.sidebar {
+    width: 40%;
+    flex: 0 0 40%;
+    background-color: #fff; /* White background for contrast */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for the sidebar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* A subtle shadow for depth */
+    max-width: 300px; /* Set a max-width for the sidebar */
+    margin: auto; /* Centering the sidebar if it's the only column */
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1); /* Shadow to give depth */
+    overflow-y: auto;
+    position: fixed;
+    top: 220px;
+    right: 20px;
+    max-height: calc(100vh - 200px - 60px);
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar select {
+    padding: 10px;
+    margin-bottom: 20px; /* Spacing between each filter */
+    border: 1px solid #ccc; /* A subtle border */
+    border-radius: 4px; /* Rounded corners for the select boxes */
+    background-color: #fafafa; /* A very light grey background */
+    cursor: pointer; /* Indicate that the element is selectable */
+}
+
+.sidebar fieldset {
+    padding: 10px;
+    margin-bottom: 20px; /* Spacing between each filter */
+    border: 1px solid #ccc; /* A subtle border */
+    border-radius: 4px; /* Rounded corners for the fieldset */
+}
+
+.sidebar legend {
+    padding: 0 5px; /* Padding around the legend text */
+    margin-left: 10px; /* Spacing from the left edge */
+    font-size: 14px; /* Smaller font size for the legend */
+    color: #333; /* Dark grey color for the text */
+    background-color: #fff; /* White background behind the text */
+}
+
+.sidebar label {
+    display: block; /* Each label on a new line */
+    margin: 5px 0; /* Spacing between each radio button */
+    cursor: pointer; /* Indicate that the element is selectable */
+}
+
+.sidebar input[type="radio"] {
+    margin-right: 10px; /* Spacing between the radio button and label text */
+}
+
+.sidebar input[type="radio"]:focus + label {
+    outline: 2px solid #0056b3; /* Adding outline to the label on input focus */
+}
+
+.sidebar label:hover {
+    background-color: #f5f5f5;
+}
+
+.filter-area {
+    display: none;
+}
+
+.search {
+    background-color: #39275B;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #ffffff; 
+    border-radius: 4px;
+}
+
+.search button:hover {
+    background-color: #39275bb9; 
+}
+
+/* end for sidebar */
+.place-holder{
+    width: 80%;
+}
+
+.place-holder h2 {
+    color: #39275B;
+}
+
+.place-holder ul, .place-holder ol {
+    margin-left: 20px;
+}
+
+.place-holder li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+/* end for instruction */
+
+.main-content {
+    width: 60%;
+    flex:1;
+    padding: 40px;
+    padding-top: 160px;
+    padding-bottom: 160px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; 
+}
+
+.provider-card {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.provider-photo {
+    width: 150px;  /* or the size you desire */
+    height: 150px;  /* or the size you desire */
+    object-fit: cover;  /* ensures the image covers the area without distortion */
+    margin-right: 20px;
+}
+
+.provider-info {
+    flex-grow: 1;
+}
+
+.provider-info h2 {
+    margin-top: 0;
+    color: #0056b3; /* Dark blue color as seen in the screenshot */
+}
+
+.provider-info p {
+    margin: 5px 0;
+}
+
+/* for info.html */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+    min-height: 100%; /* minimum height to 100% of the viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+.info {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+.info p {
+    margin: 10px 0;
+}
+
+.info h2 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+/* footer */
+.site-footer {
+    height: 70px;
+    background-color: #39275B; 
+    color: white;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%; 
+}
