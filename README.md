@@ -19,7 +19,7 @@ Those code is inside the following folder:
 
 # Install and run the code
 
-Dataset Build: 
+## Dataset Build 
 Just open this folder and run the following cmd.
 
 ```bash
@@ -28,7 +28,7 @@ python get_data.py
 
 The output should be inside data/Immunology or data/Oncology
 
-Model Training and Ranking: 
+## Model Training and Ranking 
 You would need the following packages: Pytorch, NetworKit, NetworkX and SciPy. Please use PyTorch (0.4.1) and Python (3.7).
 After you have installed those packages, just open this folder and run the following cmd.
 
@@ -38,8 +38,7 @@ python predict.py
 
 The output should be inside datasets/res/Immunology or datasets/res/Oncology.
 
-Back-End and Front-End:
-
+## Back-End and Front-End
 You could execute this part of code with docker. Use the following command to build, set up the database, and run the server.
 
 ```bash
