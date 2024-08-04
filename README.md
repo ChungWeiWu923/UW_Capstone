@@ -53,7 +53,7 @@ localhost:8000/add
 
 # Acknowedgement
 
-I want thank the developers of the GNN repository, which its code plays an important part in this project. The github of GNN would be: https://github.com/sunilkmaurya/GNN_Ranking. You can find the code and the guideline about using it for here. I also want to give my thanks to Manyu and Yizhou, who are two great teammates. Finally I want to thank University of Washington and Genmab to me such an opportunity to learn and solve this real world problem.
+I want thank the developers of the GNN repository, which its code plays an important part in this project. The github of GNN would be: https://github.com/sunilkmaurya/GNN_Ranking. You can find the code and the guideline about using it for here. I also want to give my thanks to Manyu and Yizhou, who are two great teammates. Finally I want to thank University of Washington and Genmab to give me such an opportunity to learn and solve this real world problem.
 
 This project would not have been possible without your support and contributions!
 
